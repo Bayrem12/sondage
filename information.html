@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>استبيان استراتيجيات التعليم المبتكر</title>
+    <style>
+        /* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+/* Container Styling */
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #2575fc;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* Question Block */
+.question {
+    margin-bottom: 25px;
+}
+
+/* Radio Button Styling */
+input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.3);
+    accent-color: #2575fc;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="radio"]:hover {
+    transform: scale(1.4);
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+}
+
+/* Text Area Styling */
+textarea {
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+    outline: none;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+  
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+.send{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+/* Button Suivi Styling */
+.button-suivi {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-suivi button {
+    padding: 12px 20px;
+    background: transparent;  /* No background color */
+    color: #2575fc;  /* Blue color for text */
+    border: 2px solid #2575fc;  /* Border with blue color */
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;  /* Remove default underline */
+    transition: all 0.3s ease;
+}
+
+.button-suivi button:hover {
+    color: #ffffff;  /* White text on hover */
+    background: #2575fc;  /* Blue background on hover */
+    border-color: #2575fc;  /* Keep the border color the same */
+    text-decoration: underline;  /* Underline text on hover */
+}
+
+.button-suivi button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+
+    </style>
+    <script>
+        // JavaScript to Handle Page Switching
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        
+        
+        <!-- Page 1 -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="36ff1ae4-b92b-41e1-a40a-ca2f6002010c">
+            <div id="page1" class="page">
+                <h1>استبيان استراتيجيات التعليم المبتكر</h1>
+            
+                <div class="question">
+                    <label>هل درست استراتيجيات التعليم المبتكر خلال فترة تدريبك؟</label>
+                    <input type="radio" name="q1" value="نعم" required> نعم
+                    <input type="radio" name="q1" value="لا"> لا
+                    <input type="radio" name="q1" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تطبق الاستراتيجيات التي تعلمتها خلال التدريب في صفك الحالي؟</label>
+                    <input type="radio" name="q2" value="نعم" required> نعم
+                    <input type="radio" name="q2" value="لا"> لا
+                    <input type="radio" name="q2" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل كانت تجربتك في التدريب مفيدة في تطبيق استراتيجيات التعليم المبتكر؟</label>
+                    <input type="radio" name="q3" value="نعم" required> نعم
+                    <input type="radio" name="q3" value="لا"> لا
+                    <input type="radio" name="q3" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تستخدم التعلم المعكوس في دروسك؟</label>
+                    <input type="radio" name="q4" value="نعم" required> نعم
+                    <input type="radio" name="q4" value="لا"> لا
+                    <input type="radio" name="q4" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تستخدم التعلم القائم على المشاريع في دروسك؟</label>
+                    <input type="radio" name="q5" value="نعم" required> نعم
+                    <input type="radio" name="q5" value="لا"> لا
+                    <input type="radio" name="q5" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تستخدم التعلم التعاوني في دروسك؟</label>
+                    <input type="radio" name="q6" value="نعم" required> نعم
+                    <input type="radio" name="q6" value="لا"> لا
+                    <input type="radio" name="q6" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تستخدم التكنولوجيا لتعزيز التعلم والتفاعل بين التلاميذ؟</label>
+                    <input type="radio" name="q7" value="نعم" required> نعم
+                    <input type="radio" name="q7" value="لا"> لا
+                    <input type="radio" name="q7" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل هناك استراتيجيات محددة تعتقد أنها كانت أكثر تأثيرًا في زيادة تفاعل التلاميذ؟</label>
+                    <input type="radio" name="q8" value="نعم" required> نعم
+                    <input type="radio" name="q8" value="لا"> لا
+                    <input type="radio" name="q8" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تستخدم أدوات رقمية مثل التطبيقات والبرامج التعليمية لتعزيز التعلم؟</label>
+                    <input type="radio" name="q9" value="نعم" required> نعم
+                    <input type="radio" name="q9" value="لا"> لا
+                    <input type="radio" name="q9" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل تستخدم منصات التعليم الإلكتروني لتحفيز التفاعل بين التلاميذ؟</label>
+                    <input type="radio" name="q10" value="نعم" required> نعم
+                    <input type="radio" name="q10" value="لا"> لا
+                    <input type="radio" name="q10" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل لاحظت زيادة في تفاعل التلاميذ بعد تطبيق استراتيجيات التعليم المبتكر؟</label>
+                    <input type="radio" name="q11" value="نعم" required> نعم
+                    <input type="radio" name="q11" value="لا"> لا
+                    <input type="radio" name="q11" value="أحيانًا"> أحيانًا
+                </div>
+    
+                <div class="question">
+                    <label>هل واجهت تحديات في تحفيز بعض التلاميذ على المشاركة؟</label>
+                    <input type="radio" name="q12" value="نعم" required> نعم
+                    <input type="radio" name="q12" value="لا"> لا
+                    <input type="radio" name="q12" value="أحيانًا"> أحيانًا
+                </div>
+
+                <div class="button-suivi">
+                    <button type="button" onclick="showPage('page2')">التالي</button>
+                </div>
+           
+        </div>
+
+        <!-- Page 2 -->
+        <div id="page2" class="page hidden">
+            <div class="question">
+                <label>هل تستخدم تقييمات دورية لقياس مستوى تفاعل التلاميذ؟</label>
+                <input type="radio" name="q13" value="نعم" required> نعم
+                <input type="radio" name="q13" value="لا"> لا
+                <input type="radio" name="q13" value="أحيانًا"> أحيانًا
+            </div>
+
+            <div class="question">
+                <label>هل حصلت على ملاحظات إيجابية من التلاميذ حول الأساليب المستخدمة؟</label>
+                <input type="radio" name="q14" value="نعم" required> نعم
+                <input type="radio" name="q14" value="لا"> لا
+                <input type="radio" name="q14" value="أحيانًا"> أحيانًا
+            </div>
+            <div class="question">
+                <label>هل تقيم نجاح استراتيجيات التعليم التي تستخدمها بناءً على أداء التلاميذ؟</label>
+                <input type="radio" name="q15" value="نعم" required> نعم
+                <input type="radio" name="q15" value="لا"> لا
+                <input type="radio" name="q15" value="أحيانًا"> أحيانًا
+            </div>
+            <div class="question">
+                <label>هل واجهت تحديات عند تطبيق استراتيجيات التعليم المبتكر؟</label>
+                <input type="radio" name="q16" value="نعم" required> نعم
+                <input type="radio" name="q16" value="لا"> لا
+                <input type="radio" name="q16" value="أحيانًا"> أحيانًا
+            </div>
+            <div class="question">
+                <label>هل تحتاج إلى أي موارد أو دعم إضافي لتحسين استخدام هذه الاستراتيجيات؟</label>
+                <input type="radio" name="q17" value="نعم" required> نعم
+                <input type="radio" name="q17" value="لا"> لا
+                <input type="radio" name="q17" value="أحيانًا"> أحيانًا
+            </div>
+            <div class="question">
+                <label>هل تشجع على التعلم النشط في صفك؟</label>
+                <input type="radio" name="q18" value="نعم" required> نعم
+                <input type="radio" name="q18" value="لا"> لا
+                <input type="radio" name="q18" value="أحيانًا"> أحيانًا
+            </div>
+            <div class="question">
+                <label>هل تساهم استراتيجياتك التعليمية في تنمية مهارات التفكير النقدي والابتكار عند التلاميذ؟</label>
+                <input type="radio" name="q19" value="نعم" required> نعم
+                <input type="radio" name="q19" value="لا"> لا
+                <input type="radio" name="q19" value="أحيانًا"> أحيانًا
+            </div>
+
+            <div class="question">
+                <label>ما هي النصائح التي تقدمها للمعلمين الجدد الذين يرغبون في استخدام استراتيجيات التعليم المبتكر؟</label>
+                <textarea name="ما هي النصائح التي تقدمها للمعلمين الجدد الذين يرغبون في استخدام استراتيجيات التعليم المبتكر؟" rows="4" style="width: 100%;" placeholder="اكتب نصائحك هنا..."></textarea>
+            </div>
+
+            <div class="question">
+                <label>كيف ترى مستقبل التعليم المبتكر وتأثيره على عملية التعلم والتفاعل بين المعلم والتلاميذ؟</label>
+                <textarea name="كيف ترى مستقبل التعليم المبتكر وتأثيره على عملية التعلم والتفاعل بين المعلم والتلاميذ؟" rows="4" style="width: 100%;" placeholder="اكتب رأيك هنا..."></textarea>
+            </div>
+               
+
+                <div class="button-container">
+                    <button class="send" type="submit">إرسال</button>
+                </div>
+                <div class="button-suivi">
+                    <button type="button" onclick="showPage('page1')">السابق</button>
+                </div>
+                
+            
+        </div>
+    </form>
+    </div>
+</body>
+</html>
